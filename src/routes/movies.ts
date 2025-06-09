@@ -18,4 +18,10 @@ router.get("/getall", (req, res) => {
   });
 });
 
+router.get("/poster/:name", (req, res) => {
+  const { name } = req.params;
+
+  res.sendFile(process.env.MEDIA_PATH + "/posters/" + name + ".jpg");
+});
+
 export default router;
